@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="theme-color" content="#05060f">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/logo-180.png">
+<meta property="og:image" content="https://xuanqh.github.io/assets/logo-512.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – DevPress</title>
+<meta name="description" content="DevPress – Mobility and Publisher. Building handy mobile apps: document reader, document scanner and spam call blocker.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="alternate" hreflang="vi" href="vi/lien-he.html">
+</head>
+<body>
+<div class="bg" aria-hidden="true"><div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div><div class="grid-bg"></div><canvas id="net"></canvas><div class="noise"></div></div>
+<header><div class="container nav">
+  <a class="logo" href="index.html" aria-label="DevPress"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"> <defs> <linearGradient id="dpg" x1="8" y1="56" x2="56" y2="8" gradientUnits="userSpaceOnUse"> <stop offset="0" stop-color="#22d3ee"/><stop offset=".45" stop-color="#4f7cff"/><stop offset=".75" stop-color="#8b5cf6"/><stop offset="1" stop-color="#ec4899"/> </linearGradient> <linearGradient id="dpt" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse"> <stop offset="0" stop-color="#161d42"/><stop offset="1" stop-color="#070914"/> </linearGradient> <radialGradient id="dpl" cx="32" cy="32" r="22" gradientUnits="userSpaceOnUse"> <stop offset="0" stop-color="#4f7cff" stop-opacity=".45"/><stop offset="1" stop-color="#4f7cff" stop-opacity="0"/> </radialGradient> </defs> <rect x="1" y="1" width="62" height="62" rx="16" fill="url(#dpt)"/> <rect x="1" y="1" width="62" height="62" rx="16" fill="url(#dpl)"/> <rect x="1.75" y="1.75" width="60.5" height="60.5" rx="15.25" fill="none" stroke="url(#dpg)" stroke-opacity=".55" stroke-width="1.5"/> <path class="d" pathLength="100" d="M16 23V50H30A18 18 0 0 0 30 14H24" fill="none" stroke="url(#dpg)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/> <circle class="node" cx="16" cy="14" r="3.5" fill="#22d3ee"/> <path class="play" d="M26.5 25.5L37.5 32L26.5 38.5Z" fill="#fff" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/> </svg>Dev<span>Press</span></a>
+  <div class="nav-right">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="technology.html">Technology</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a class="lang" href="vi/lien-he.html" hreflang="vi" lang="vi">VI</a>
+  </div>
+</div></header>
+<main>
+<section class="hero"><div class="container">
+  <span class="tag">✉️ Contact</span>
+  <h1>Let's <em>connect</em></h1>
+  <p>App feedback, bug reports or partnership proposals – we're always happy to hear from you.</p>
+</div></section>
+
+<section><div class="container contact">
+  <div class="card">
+    <h3 style="margin-bottom:20px">Information</h3>
+    <div class="info-item"><div class="icon">📧</div><div><strong>Email</strong><p><a id="email-link" href="#"></a></p></div></div>
+    <div class="info-item"><div class="icon">🌐</div><div><strong>Website</strong><p><a href="https://xuanqh.github.io/">xuanqh.github.io</a></p></div></div>
+    <div class="info-item"><div class="icon">▶️</div><div><strong>Google Play</strong><p><a href="https://play.google.com/store/apps/dev?id=6651594236635365589" target="_blank" rel="noopener">DevPress on Google Play</a></p></div></div>
+  </div>
+  <form class="card" id="contact-form">
+    <h3>Send a message</h3>
+    <label for="name">Full name</label>
+    <input id="name" name="name" required>
+    <label for="from">Your email</label>
+    <input id="from" name="from" type="email" required>
+    <label for="topic">Subject</label>
+    <select id="topic" name="topic">
+      <option>App support</option>
+      <option>Bug report</option>
+      <option>Partnership / Advertising</option>
+      <option>Other</option>
+    </select>
+    <label for="msg">Message</label>
+    <textarea id="msg" name="msg" required></textarea>
+    <button class="btn primary" type="submit">Send a message</button>
+  </form>
+</div></section>
+
+<script>
+  const CONTACT_EMAIL = "qhxuan@gmail.com";
+  const link = document.getElementById("email-link");
+  link.textContent = CONTACT_EMAIL;
+  link.href = "mailto:" + CONTACT_EMAIL;
+  document.getElementById("contact-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const f = e.target;
+    const subject = `[${f.topic.value}] ${f.name.value}`;
+    const body = `${f.msg.value}\n\n— ${f.name.value} <${f.from.value}>`;
+    location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+</main>
+<footer><div class="container">
+  <span>© 2026 DevPress · Mobility and Publisher</span>
+  <span><a href="https://play.google.com/store/apps/dev?id=6651594236635365589" target="_blank" rel="noopener">Google Play</a> · <a href="https://xuanqh.github.io/">xuanqh.github.io</a></span>
+</div></footer>
+<script src="assets/main.js" defer></script>
+</body>
+</html>
